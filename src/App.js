@@ -20,6 +20,7 @@ import facade from "./apiFacade";
 import LoggedIn from "./componet/login/LoggedIn";
 import Owners from "./componet/Owners";
 import Harbour from "./componet/Harbour";
+import Details from "./componet/details";
 
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -40,7 +41,7 @@ function App(props) {
           <Home />
         </Route>
         <Route path="/harbours">
-          <Harbour />
+          <Harbour details={props.Details} />
         </Route>
         <Route path="/add-book">
           <AddBook bookFacade={props.bookFacade} />

@@ -1,41 +1,43 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import facade from "../apiFacade";
 
-
-function Details() {
+const Details = () => {
   let { name } = useParams();
-  
-  const {
-    boat , setBoat
-  } = useEffect ([])
+
+  const [boat, setBoat] = useState([]);
 
   useEffect(() => {
-    
-      
     fetch(
-      "http://localhost:8080/SP1_war_exploded/api/boat/getboatbyharbour/" + name ,
+      "http://localhost:8080/SP1_war_exploded/api/boat/getboatbyharbour/" +
+        name,
       facade.makeOptions("GET", true)
     )
       .then((response) => response.json())
       .then((data) => {
         setBoat(data);
-      })
-  
-
-    }, []);
+      });
+  },[name]);
 
   return (
     <div>
       <div>
-        <h2>Boat: {boat}</h2>
-        ID: {boat.id} <br />
-        Brand: {boat.brand}
-        Make: {boat.make}
-        Name: {boat.name}
+        {boat &&
+          boat.map((boat) => (
+            <div>
+              <ul>
+                <li>
+                  ID: {boat.id} <br />
+                  Brand: {boat.brand},
+                  Make: {boat.make},
+                  Name: {boat.name}. 
+                </li>
+              </ul>
+            </div>
+          ))}
       </div>
     </div>
   );
-}
+};
 
 export default Details;
