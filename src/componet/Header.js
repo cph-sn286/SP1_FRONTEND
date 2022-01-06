@@ -18,8 +18,13 @@ function Header() {
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to="/products">
-            Products
+          <NavLink activeClassName="active" to="/owners">
+            Owners
+          </NavLink>
+        </li>
+        <li>
+          <NavLink activeClassName="active" to="/harbours">
+            Harbours
           </NavLink>
         </li>
         <li>
@@ -30,11 +35,6 @@ function Header() {
         <li>
           <NavLink activeClassName="active" to="/find-book">
             Find Book
-          </NavLink>
-        </li>
-        <li>
-          <NavLink activeClassName="active" to="/company">
-            Company
           </NavLink>
         </li>
         <li>

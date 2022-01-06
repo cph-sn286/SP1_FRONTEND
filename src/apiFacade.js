@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/jwtdemo";
+const URL = "http://localhost:8080/SP1_war_exploded";
 
 function handleHttpErrors(res) {
   if (!res.ok) {

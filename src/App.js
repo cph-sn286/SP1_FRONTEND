@@ -11,7 +11,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./componet/Header";
 import Home from "./componet/Home";
-import Company from "./componet/Company";
 import Products from "./componet/Products";
 import AddBook from "./componet/AddBook";
 import NoMatch from "./componet/NoMatch";
@@ -19,6 +18,8 @@ import FindBook from "./componet/FindBook";
 import LogIn from "./componet/login/LogIn";
 import facade from "./apiFacade";
 import LoggedIn from "./componet/login/LoggedIn";
+import Owners from "./componet/Owners";
+import Harbour from "./componet/Harbour";
 
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -38,8 +39,8 @@ function App(props) {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/products">
-          <Products bookFacade={props.bookFacade} />
+        <Route path="/harbours">
+          <Harbour />
         </Route>
         <Route path="/add-book">
           <AddBook bookFacade={props.bookFacade} />
@@ -47,8 +48,8 @@ function App(props) {
         <Route path="/find-book">
           <FindBook bookFacade={props.bookFacade} />
         </Route>
-        <Route path="/company">
-          <Company />
+        <Route path="/owners">
+          <Owners />
         </Route>
         <route path="/login">
           <div>
