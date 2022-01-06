@@ -42,6 +42,11 @@ function Header() {
             Login
           </NavLink>
         </li>
+        <li>
+          <NavLink activeClassName="active" to="/create-boat">
+            Create Boat
+          </NavLink>
+        </li>
       </ul>
     </div>
   );

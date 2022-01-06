@@ -21,6 +21,7 @@ import LoggedIn from "./componet/login/LoggedIn";
 import Owners from "./componet/Owners";
 import Harbour from "./componet/Harbour";
 import Details from "./componet/details";
+import CreateBoat from "./CreateBoat";
 
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -51,6 +52,9 @@ function App(props) {
         </Route>
         <Route path="/owners">
           <Owners />
+        </Route>
+        <Route path="/create-boat">
+          <CreateBoat />
         </Route>
         <route path="/login">
           <div>
